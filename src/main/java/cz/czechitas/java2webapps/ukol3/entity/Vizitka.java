@@ -8,7 +8,6 @@ public class Vizitka {
     private String email;
     private String telefon;
     private String web;
-    private String celaAdresa; // (readonly property, ve tvaru „ulice, obecPsc“)
 
     public Vizitka() {
     }
@@ -21,9 +20,6 @@ public class Vizitka {
         this.email = email;
         this.telefon = telefon;
         this.web = web;
-        if (ulice != null && obecPsc != null) {
-            this.celaAdresa = String.format("%s, %s", ulice, obecPsc);
-        }
     }
 
     public String getJmeno() {
@@ -55,7 +51,7 @@ public class Vizitka {
     }
 
     public String getCelaAdresa() {
-        return celaAdresa;
+        return ulice + " " + obecPsc;
     }
 
     public void setJmeno(String jmeno) {

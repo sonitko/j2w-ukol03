@@ -16,10 +16,10 @@ import java.util.List;
 @RequestMapping("/")
 public class VizitkaController {
 
-    private final List<Vizitka> vizitka;
+    private final List<Vizitka> vizitky;
 
     public VizitkaController() {
-        vizitka = Arrays.asList(
+        vizitky = Arrays.asList(
                 new Vizitka("Tomáš Sokol", "Domácí zvířata", "Hrnčířská 120", "59501 Velká Bíteš", "sokol@nasezvire.cz", "+420 758833694", "www.nasezvire.cz"),
                 new Vizitka("Petr Ostrý", "Stavebniny s r.o.", "Velkopavlovická 21", "62800 Brno", "PetrOstry@stav.eu", null, "www.stavebniny.com"),
                 new Vizitka("Libuše Horáčková", "Nej Firma a.s.", "Požární 8", "36005 Karlovy Vary", null, "+420 451232154", "www.nejfirma.cz"),
@@ -32,14 +32,14 @@ public class VizitkaController {
     @GetMapping("/")
     public ModelAndView seznam() {
         ModelAndView modelAndView = new ModelAndView("seznam");
-        modelAndView.addObject("seznam", vizitka);
+        modelAndView.addObject("seznam", vizitky);
         return modelAndView;
     }
 
     @GetMapping("/detail")
     public ModelAndView detail(int id) {
         ModelAndView modelAndView = new ModelAndView("detail");
-        modelAndView.addObject("detail", vizitka.get(id));
+        modelAndView.addObject("detail", vizitky.get(id));
         return modelAndView;
 
     }
